@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "5d880df3-1734-458a-a729-d27ab131b369",
+		"name": "Parcial2WEB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23134210"
+	},
+	"item": [
+		{
+			"name": "CreateEstudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Gaspar Noe\",\n  \"codigo\": \"1234567890\",\n  \"creditosAprobados\": 30\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/estudiantes"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProfesor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cedula\": 12345,\n  \"nombre\": \"Mr. Anderson\",\n  \"grupoDeInvestigacion\": \"TICSW\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/profesores"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProfessor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cedula\": 12345,\n  \"nombre\": \"Mr. Anderson\",\n  \"grupoDeInvestigacion\": \"TICSW\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/profesores/1"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteProfessorByCedula",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"cedula\": 12345,\n  \"nombre\": \"Mr. Anderson\",\n  \"grupoDeInvestigacion\": \"TICSW\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/profesores/cedula/12345"
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePropuesta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"titulo\": \"Propuesta 1\",\n  \"descripcion\": \"Descripcion de la propuesta 1\",\n  \"palabraClave\": \"Clave 1\",\n  \"profesor\": { \"id\": 1 }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/propuestas"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateProyecto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"titulo\": \"Propuesta 1\",\n  \"descripcion\": \"Descripcion de la propuesta 1\",\n  \"palabraClave\": \"Clave 1\",\n  \"profesor\": { \"id\": 1 }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/propuestas"
+			},
+			"response": []
+		}
+	]
+}

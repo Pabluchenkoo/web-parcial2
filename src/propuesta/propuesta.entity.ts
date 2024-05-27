@@ -15,11 +15,11 @@ export class PropuestaEntity {
   descripcion: string;
 
   @Column()
-  palabraClave: number;
+  palabraClave: string;
 
   @ManyToOne(() => ProfesorEntity, profesor => profesor.propuestas)
   profesor: ProfesorEntity;
 
-  @OneToOne (() => ProyectoEntity, proyecto => proyecto.propuesta)
+  @OneToOne(() => ProyectoEntity, proyecto => proyecto.propuesta)
   proyecto: ProyectoEntity;
 }

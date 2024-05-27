@@ -5,19 +5,16 @@ import { BadRequestException, Injectable } from "@nestjs/common";
 import { ProyectoEntity } from "./proyecto.entity";
 
 @Injectable()
-export class ProyectoService{
+export class ProyectoService {
   constructor(
-  @InjectRepository(ProyectoEntity)
-  private proyectoRespository: Repository<ProyectoEntity>,
-  ){}
+    @InjectRepository(ProyectoEntity)
+    private proyectoRepository: Repository<ProyectoEntity>,
+  ) {}
 
-  //CreateProyecto() FecchaFin must be later than fechaInicio
-  async createProyecto(proyecto: ProyectoEntity): Promise<ProyectoEntity>{
-    if(proyecto.fechaFin < proyecto.fechaInicio){
-      throw new BadRequestException('La fecha de fin debe ser mayor a la fecha de inicio')
+  async createProyecto(proyecto: ProyectoEntity): Promise<ProyectoEntity> {
+    if (proyecto.fechaFin < proyecto.fechaInicio) {
+      throw new BadRequestException('La fecha de fin debe ser mayor a la fecha de inicio');
     }
-    return this.proyectoRespository.save(proyecto);
+    return this.proyectoRepository.save(proyecto);
   }
-
-
 }

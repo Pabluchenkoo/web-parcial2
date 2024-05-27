@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from "typeorm";
 import { EstudianteEntity } from "../estudiante/estudiante.entity";
+import { PropuestaEntity } from "../propuesta/propuesta.entity";
 
 @Entity()
 export class ProyectoEntity {
@@ -14,13 +15,12 @@ export class ProyectoEntity {
   fechaFin: Date;
 
   @Column()
-  palabraClave: number;
+  url: string;
 
-  @OneToOne (() => EstudianteEntity , estudiante => estudiante.proyecto)
+  @OneToOne(() => EstudianteEntity, estudiante => estudiante.proyecto)
   @JoinColumn()
   estudiante: EstudianteEntity;
 
-  @OneToOne (() => ProyectoEntity, proyecto => proyecto.propuesta)
-  propuesta: ProyectoEntity;
-
+  @OneToOne(() => PropuestaEntity, propuesta => propuesta.proyecto)
+  propuesta: PropuestaEntity;
 }
